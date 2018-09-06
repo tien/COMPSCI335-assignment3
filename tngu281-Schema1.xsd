@@ -1,0 +1,26 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ArrayOfRSSItem">
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:element name="RSSItem">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descriptionField" type="xs:string" />
+              <xs:element name="guidField">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="[a-f\d]{32}" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="linkField" type="xs:string" />
+              <xs:element name="pubDateField" type="xs:string" />
+              <xs:element name="titleField" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
